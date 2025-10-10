@@ -1,5 +1,5 @@
 function App() {
-    const message="whaaaaat"
+    const message=(2+2+2)
     return (
     <div>
         <h1>hello bro {message}</h1>
