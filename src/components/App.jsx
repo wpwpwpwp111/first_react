@@ -1,4 +1,5 @@
 import OfficerProfile from "./OfficerProfile.jsx"
+import css from './App.module.css'
 const firstOfficer = {name:"Jacob Mercer", spec:"Fighter Pilot", age:"42", satus:"Retired"};
 
 const secondOfficer = {name:"Adrian Ross", spec:"Reconnaissance", age:"35", status:"Active"};

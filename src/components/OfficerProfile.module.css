@@ -1,0 +1,18 @@
+.container{
+    background-color:teal;
+    font-size:30px
+}
+
+.text{
+    margin: 0;
+    font-size:20px;
+}
+
+.active{
+    color:green
+}
+
+
+.retired{
+    color:red
+}
