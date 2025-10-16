@@ -22,7 +22,13 @@ const ProfileSection = ({title, children}) => {
 
 function App() {
 
+    const [phones, setPhones] = useState("technology");
+
+    const [tablets, setTablets] = useState("tech");
+
     const [clicks, setClicks]=useState(0);
+
+    const [count, setCount] = useState(5);
 
     const handleClick = () =>{
 
