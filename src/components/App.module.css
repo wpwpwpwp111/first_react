@@ -6,3 +6,15 @@
 .item{
     background-color:aqua;
 }
+
+.icon{
+    color:greenyellow;
+    width:70px;
+    height:70px;
+}
+
+.icon2{
+    color:orangered;
+    width:100px;
+    height:100px;
+}
