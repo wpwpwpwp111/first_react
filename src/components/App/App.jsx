@@ -4,7 +4,6 @@ import { FaBeer } from 'react-icons/fa';
 import OfficerProfile from "../OfficerProfile/OfficerProfile.jsx";
 import css from './App.module.css';
 import Reader from '../Reader/Reader.jsx';
-import clsx from 'clsx';
 import articles from '../../articles.json';
 import Timer from '../../Timer/timer.jsx';
 //import ClickTracker from '../ClickTracker/ClickTracker.jsx';
