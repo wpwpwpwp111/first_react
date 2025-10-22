@@ -1,9 +1,27 @@
 import {useState} from 'react';
 import { HiThumbUp } from "react-icons/hi";
 import { FaBeer } from 'react-icons/fa';
-import OfficerProfile from "./OfficerProfile/OfficerProfile.jsx";
+import OfficerProfile from "../OfficerProfile/OfficerProfile.jsx";
 import css from './App.module.css';
-import clsx from 'clsx'
+import Reader from '../Reader/Reader.jsx';
+import clsx from 'clsx';
+import articles from '../../articles.json';
+import Timer from '../../Timer/timer.jsx';
+//import ClickTracker from '../ClickTracker/ClickTracker.jsx';
+import UseForm from '../UseForm/UseForm.jsx'
+
+
+
+//useEffect = (() => {
+// console.log("congratulations", clicks);
+ //}, [clicks]);
+
+
+const ClickCounter = ({ value, onCount }) => {
+
+    return <button onClick={onCount}>click me:{value}</button>
+
+};
 
 const firstOfficer = {name:"Jacob Mercer", spec:"Fighter Pilot", age:"42", satus:"Retired"};
 
@@ -21,25 +39,36 @@ const ProfileSection = ({title, children}) => {
  const isModalOpen = false
 
 function App() {
-
-    const [phones, setPhones] = useState("technology");
-
-    const [tablets, setTablets] = useState("tech");
-
+    
     const [clicks, setClicks]=useState(0);
-
-    const [count, setCount] = useState(5);
-
-    const handleClick = () =>{
-
+    const [values, setValues]=useState({a: 1, b: 2, c: 3, d: 4,});
+    
+    const handleClick = () => {
         setClicks(clicks + 1);
+};
 
-        console.log(clicks);
+    const handleReset = () => {
+        setClicks(0);
+    };
+
+    const handleChangeValue = () => {
+        setValues({...values, b: 7,});
     }
 
+    const total = values.a + values.b + values.c + values.d;
+
+
     const message=(2+2+2)
+
+    const AddNewUser = (newUser) => {
+        console.log(newUser);
+    };
+
     return (
     <div>
+
+     <UseForm onAdd={AddNewUser}/>
+
         <ProfileSection title="Rating">
             <div>component of user</div>
         </ProfileSection>
@@ -53,10 +82,17 @@ function App() {
         </ProfileSection>
         <h1>hello bro {message}</h1>
         
-        <button onClick={handleClick}>Click me:{clicks}</button>
+       
+        <ClickCounter value={clicks} onCount = {handleClick}/>
+        <ClickCounter value={clicks} onCount = {handleClick}/>
+        <ClickCounter value={clicks} onCount = {handleClick}/> 
+        <button onClick={handleReset}>Reset</button>
+        <button onClick={handleChangeValue}>ChangeValue:{total}</button>
+
+        <Reader articles = {articles}/>
 
         <p>141551617687871661218287126212689732782739237823</p>
-        <input type="texty"/>
+        <input type="text"/>
         <h2>Available Officers</h2> 
 
         <FaBeer className={css.icon}/>
@@ -67,7 +103,7 @@ function App() {
         <HiThumbUp className={css.icon2} />
         <ul>
        {[1,2,7,10].map((value) => {
-       return  <li>{value}</li>;
+       return  <li key={value}></li>;
 })}
         </ul>
     </div>
@@ -75,3 +111,5 @@ function App() {
 };
 
 export default App;
+
+// edf+tab snipet 
