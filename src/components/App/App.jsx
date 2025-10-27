@@ -5,9 +5,13 @@ import OfficerProfile from "../OfficerProfile/OfficerProfile.jsx";
 import css from './App.module.css';
 import Reader from '../Reader/Reader.jsx';
 import articles from '../../articles.json';
-import Timer from '../../Timer/timer.jsx';
+import clsx from 'clsx';
 //import ClickTracker from '../ClickTracker/ClickTracker.jsx';
-import UseForm from '../UseForm/UseForm.jsx'
+import UseForm from '../UseForm/UseForm.jsx';
+import LangSwitcher from '../LangSwitcher/LangSwitcher.jsx';
+import Button from '../Button1234/Button.jsx';
+import UseFormFormik from '../UseFormFormik/UseForm.jsx';
+
 
 
 
@@ -41,6 +45,12 @@ function App() {
     
     const [clicks, setClicks]=useState(0);
     const [values, setValues]=useState({a: 1, b: 2, c: 3, d: 4,});
+
+    const [lang, setLang]=useState("pl")
+
+    const handleChangeLang = (newLang) => {
+        setLang(newLang)
+    }
     
     const handleClick = () => {
         setClicks(clicks + 1);
@@ -66,7 +76,15 @@ function App() {
     return (
     <div>
 
-     <UseForm onAdd={AddNewUser}/>
+        <LangSwitcher top={lang} onSelect={handleChangeLang} />
+        <p>Current Lang: {lang}</p>
+
+     <UseForm onAdd={AddNewUser} />
+     <UseForm onAdd={AddNewUser} />
+
+     <Button />
+
+     <UseFormFormik onAdd={AddNewUser}/>
 
         <ProfileSection title="Rating">
             <div>component of user</div>

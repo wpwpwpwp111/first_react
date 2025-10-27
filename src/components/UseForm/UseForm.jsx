@@ -1,5 +1,10 @@
+import {useId} from 'react';
 //import css from './UseForm.modules.css'
 export default function UserForm({onAdd}) {
+
+    const userNameId = useId();
+        const RoleId = useId();
+
     const handleSubmit = (event) => {
         event.preventDefault()
 
@@ -15,14 +20,14 @@ export default function UserForm({onAdd}) {
     return(
           <form onSubmit={handleSubmit}>
             <div>
-                <label>Username</label>
-                <input type="text" name="username" />
+                <label htmlFor = {userNameId}>Username</label>
+                <input type="text" name="username" id={userNameId}/>
             </div>
         
 
             <div>
-                <label>Role</label>
-                <select name = "role">
+                <label htmlFor = {RoleId}>Role</label>
+                <select id={RoleId} name = "role">
                     <option value = "guest">Guest</option>
                     <option value = "user">User</option>
                     <option value = "admin">Admin</option>

@@ -1,0 +1,13 @@
+.form {
+ display: flex;
+ background-color:blue;
+};
+
+.input {
+    font: inherit;
+};
+
+.errort {
+    color:orangered;
+    font-size: 14px;
+};
